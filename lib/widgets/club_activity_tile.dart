@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:misfit_assigment/activity_card.dart';
-import 'package:misfit_assigment/assets.dart';
-import 'package:misfit_assigment/enums.dart';
-import 'package:misfit_assigment/sample.dart';
-import 'package:misfit_assigment/styles.dart';
-import 'package:misfit_assigment/user.dart';
+import 'package:misfit_assigment/widgets/activity_card.dart';
+import 'package:misfit_assigment/core/constants/assets.dart';
+import 'package:misfit_assigment/core/enums/enums.dart';
+import 'package:misfit_assigment/core/sample.dart';
+import 'package:misfit_assigment/core/constants/styles.dart';
+import 'package:misfit_assigment/models/user.dart';
 
 class ClubActivityTile extends StatelessWidget {
   const ClubActivityTile({super.key, required this.userClub});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:misfit_assigment/enums.dart';
-import 'package:misfit_assigment/styles.dart';
-import 'package:misfit_assigment/utils.dart';
+import 'package:misfit_assigment/core/enums/enums.dart';
+import 'package:misfit_assigment/core/constants/styles.dart';
+import 'package:misfit_assigment/core/utils/utils.dart';
 
 class ActivityCard extends StatelessWidget {
   const ActivityCard(

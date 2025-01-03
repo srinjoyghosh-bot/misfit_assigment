@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:misfit_assigment/activity_card.dart';
-import 'package:misfit_assigment/enums.dart';
-import 'package:misfit_assigment/strings.dart';
+import 'package:misfit_assigment/widgets/activity_card.dart';
+import 'package:misfit_assigment/core/enums/enums.dart';
+import 'package:misfit_assigment/core/constants/strings.dart';
 
 class BadgeDialog extends StatelessWidget {
   const BadgeDialog({super.key, required this.badge});

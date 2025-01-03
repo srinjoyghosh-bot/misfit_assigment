@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:misfit_assigment/badge_dialog.dart';
-import 'package:misfit_assigment/club_activity_tile.dart';
-import 'package:misfit_assigment/enums.dart';
-import 'package:misfit_assigment/activity_card.dart';
-import 'package:misfit_assigment/strings.dart';
-import 'package:misfit_assigment/styles.dart';
-import 'package:misfit_assigment/user.dart';
+import 'package:misfit_assigment/widgets/badge_dialog.dart';
+import 'package:misfit_assigment/widgets/club_activity_tile.dart';
+import 'package:misfit_assigment/core/enums/enums.dart';
+import 'package:misfit_assigment/widgets/activity_card.dart';
+import 'package:misfit_assigment/core/constants/strings.dart';
+import 'package:misfit_assigment/core/constants/styles.dart';
+import 'package:misfit_assigment/models/user.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key, required this.user});

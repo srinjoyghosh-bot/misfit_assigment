@@ -1,4 +1,4 @@
-import 'package:misfit_assigment/enums.dart';
+import 'package:misfit_assigment/core/enums/enums.dart';
 
 class User {
   final String id;

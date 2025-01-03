@@ -1,6 +1,7 @@
 class AppStrings {
   AppStrings._();
 
+  static const appName='Misfits Demo';
   static const profile='Profile';
   static const meetUpsAttended='Meet-ups attended';
   static const activeSince='Active since';

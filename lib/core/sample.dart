@@ -1,8 +1,8 @@
-import 'package:misfit_assigment/enums.dart';
-import 'package:misfit_assigment/user.dart';
+import 'package:misfit_assigment/core/enums/enums.dart';
+import 'package:misfit_assigment/models/user.dart';
 import 'package:uuid/uuid.dart';
 
-import 'club.dart';
+import '../models/club.dart';
 
 class SampleData {
   static List<Club> clubs = [
