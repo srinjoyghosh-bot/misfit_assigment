@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:misfit_assigment/widgets/activity_card.dart';
+import 'package:misfit_assigment/core/constants/styles.dart';
 import 'package:misfit_assigment/core/enums/enums.dart';
 import 'package:misfit_assigment/core/constants/strings.dart';
 
@@ -56,13 +56,13 @@ class BadgeDialog extends StatelessWidget {
                 Navigator.of(context).pop();
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF1E7ACC),
+                backgroundColor: Styles.surfacePrimary,
                 minimumSize: Size.fromHeight(60.h),
-                textStyle: TextStyle(fontSize: 14.sp),
               ),
-              child: Text(
+              child:  Text(
                 '${AppStrings.cool}!',
-                style: Theme.of(context).textTheme.labelSmall,
+                style: TextStyle(
+                    color: Colors.white, fontSize: 14.sp, fontWeight: FontWeight.w600),
               ),
             ),
             SizedBox(height: 16.h),

@@ -37,27 +37,31 @@ class ClubActivityTile extends StatelessWidget {
         children: [
           Row(
             children: [
-              Stack(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(18.w)),
-                    child: Image.asset(
-                      club.thumbnail,
-                      height: 130.r,
-                      width: 130.r,
-                      fit: BoxFit.cover,
+              SizedBox(
+                width: 100.w,
+                child: Stack(
+                  clipBehavior: Clip.hardEdge,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(18.w)),
+                      child: Image.asset(
+                        club.thumbnail,
+                        height: 100.w,
+                        width: 100.w,
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                  ),
-                  Positioned(
-                    top: 0.h,
-                    left: -5.w,
-                    child: Image.asset(
-                      AssetManager.diceIcon,
-                      height: 36.r,
-                      width: 36.w,
-                    ),
-                  )
-                ],
+                    Positioned(
+                      top: -2.h,
+                      left: 0.w,
+                      child: Image.asset(
+                        AssetManager.diceIcon,
+                        height: 36.r,
+                        width: 36.r,
+                      ),
+                    )
+                  ],
+                ),
               ),
               SizedBox(width: 12.w),
               Column(
