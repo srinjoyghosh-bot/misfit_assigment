@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:misfit_assigment/badge_dialog.dart';
 import 'package:misfit_assigment/club_activity_tile.dart';
 import 'package:misfit_assigment/enums.dart';
 import 'package:misfit_assigment/activity_card.dart';
@@ -16,16 +17,12 @@ class ProfileScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          leading: Image.asset(
-            'assets/icons/leading-icon.png',
-            width: 48.r,
-            height: 48.r,
-            fit: BoxFit.cover,
-          ),
+          backgroundColor: Colors.white,
+          leading: Icon(Icons.close,size: 32.r),
           title: Text(
             "Profile",
             style: TextStyle(
-                fontSize: 22.sp,
+                fontSize: 24.sp,
                 fontWeight: FontWeight.w500,
                 color: const Color(0xFF191C20)),
           ),
@@ -129,20 +126,40 @@ class BadgeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Image.asset(badge.icon, width: 56.w),
-        SizedBox(height: 10.h),
-        Text(
-          badge.title,
-          style: TextStyle(
-            fontSize: 12.sp,
-            fontWeight: FontWeight.w700,
-          ),
-        )
-      ],
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return Theme(
+              data: ThemeData(
+                dialogBackgroundColor: Colors.white
+              ),
+              child: AlertDialog(
+                titlePadding: const EdgeInsets.all(0),
+                contentPadding: const EdgeInsets.all(16),
+                content: BadgeDialog(badge: badge),
+              ),
+            );
+          },
+        );
+      },
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Image.asset(badge.icon, width: 56.w),
+          SizedBox(height: 10.h),
+          Text(
+            badge.title,
+            style: TextStyle(
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w700,
+            ),
+          )
+        ],
+      ),
     );
   }
 }

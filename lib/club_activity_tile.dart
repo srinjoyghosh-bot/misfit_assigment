@@ -16,13 +16,13 @@ class ClubActivityTile extends StatelessWidget {
         SampleData.clubs.firstWhere((club) => club.id == userClub.clubId);
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: const Color(0xFFABABAE), width: 1.w),
+        border: Border.all(color: const Color(0xFFABABAE), width: 0.5.w),
         borderRadius: BorderRadius.all(Radius.circular(24.w)),
         color: Colors.white,
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.5), // Shadow color
-            spreadRadius: -2, // Spread radius
+            spreadRadius: 1, // Spread radius
             blurRadius: 5, // Blur radius
             offset: const Offset(0, 3), // Offset in the vertical direction
           ),
@@ -96,6 +96,9 @@ class ClubActivityTile extends StatelessWidget {
                   activityInfoType: ActivityInfoType.meetUp,
                   meetUps: userClub.meetUps,
                   isClubActivity: true,
+                  icon: club.name == 'Poets without borders'
+                      ? 'assets/icons/starstruck.png'
+                      : null,
                 ),
               ),
               SizedBox(width: 16.w),

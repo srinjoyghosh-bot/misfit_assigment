@@ -9,20 +9,22 @@ class ActivityCard extends StatelessWidget {
       required this.activityInfoType,
       this.meetUps,
       this.activeSince,
-      this.isClubActivity = false});
+      this.isClubActivity = false,
+      this.icon});
 
   final ActivityInfoType activityInfoType;
   final int? meetUps;
   final DateTime? activeSince;
   final bool isClubActivity;
+  final String? icon;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
           color: const Color(0xFFF4F4F5),
-          borderRadius: BorderRadius.all(Radius.circular(16.r))),
-      padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 16.w),
+          borderRadius: BorderRadius.all(Radius.circular(24.r))),
+      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,13 +40,14 @@ class ActivityCard extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.asset(activityInfoType.icon, width: 28.r, height: 28.r),
+              Image.asset(icon ?? activityInfoType.icon,
+                  width: 28.r, height: 28.r),
               SizedBox(width: 8.w),
               Text(
                 '${activityInfoType == ActivityInfoType.meetUp ? meetUps : Utils.formatDate(activeSince)}',
                 style: TextStyle(
                     color: const Color(0xFF191C20),
-                    fontSize:isClubActivity ?  16.sp : 20.sp,
+                    fontSize: isClubActivity ? 16.sp : 20.sp,
                     fontWeight: FontWeight.w500),
               )
             ],
