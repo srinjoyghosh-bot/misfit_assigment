@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:misfit_assigment/activity_card.dart';
+import 'package:misfit_assigment/assets.dart';
 import 'package:misfit_assigment/enums.dart';
 import 'package:misfit_assigment/sample.dart';
+import 'package:misfit_assigment/styles.dart';
 import 'package:misfit_assigment/user.dart';
 
 class ClubActivityTile extends StatelessWidget {
@@ -16,7 +18,7 @@ class ClubActivityTile extends StatelessWidget {
         SampleData.clubs.firstWhere((club) => club.id == userClub.clubId);
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: const Color(0xFFABABAE), width: 0.5.w),
+        border: Border.all(color: Styles.borderPrimary, width: 0.5.w),
         borderRadius: BorderRadius.all(Radius.circular(24.w)),
         color: Colors.white,
         boxShadow: [
@@ -50,7 +52,7 @@ class ClubActivityTile extends StatelessWidget {
                     top: 0.h,
                     left: -5.w,
                     child: Image.asset(
-                      'assets/icons/dice.png',
+                      AssetManager.diceIcon,
                       height: 36.r,
                       width: 36.w,
                     ),
@@ -67,20 +69,13 @@ class ClubActivityTile extends StatelessWidget {
                     club.name,
                     softWrap: true,
                     maxLines: 2,
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20.sp,
-                        color: const Color(0xFF191C20),
-                        overflow: TextOverflow.ellipsis),
+                    style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                        fontSize: 20.sp, overflow: TextOverflow.ellipsis),
                     textAlign: TextAlign.start,
                   ),
                   Text(
                     '📍 ${club.location}',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 12.sp,
-                      color: const Color(0xFF46474A),
-                    ),
+                    style: Theme.of(context).textTheme.bodySmall,
                     textAlign: TextAlign.start,
                   )
                 ],
@@ -97,7 +92,7 @@ class ClubActivityTile extends StatelessWidget {
                   meetUps: userClub.meetUps,
                   isClubActivity: true,
                   icon: club.name == 'Poets without borders'
-                      ? 'assets/icons/starstruck.png'
+                      ? AssetManager.starStruckIcon
                       : null,
                 ),
               ),

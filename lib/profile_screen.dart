@@ -4,6 +4,8 @@ import 'package:misfit_assigment/badge_dialog.dart';
 import 'package:misfit_assigment/club_activity_tile.dart';
 import 'package:misfit_assigment/enums.dart';
 import 'package:misfit_assigment/activity_card.dart';
+import 'package:misfit_assigment/strings.dart';
+import 'package:misfit_assigment/styles.dart';
 import 'package:misfit_assigment/user.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -18,13 +20,10 @@ class ProfileScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.white,
-          leading: Icon(Icons.close,size: 32.r),
+          leading: Icon(Icons.close, size: 32.r),
           title: Text(
-            "Profile",
-            style: TextStyle(
-                fontSize: 24.sp,
-                fontWeight: FontWeight.w500,
-                color: const Color(0xFF191C20)),
+            AppStrings.profile,
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
           titleSpacing: 0,
         ),
@@ -47,8 +46,7 @@ class ProfileScreen extends StatelessWidget {
                 SizedBox(height: 24.h),
                 Text(
                   user.userName,
-                  style:
-                      TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w500),
+                  style: Theme.of(context).textTheme.headlineLarge,
                 ),
                 SizedBox(height: 16.h),
                 Row(
@@ -63,10 +61,7 @@ class ProfileScreen extends StatelessWidget {
                 SizedBox(height: 16.h),
                 Text(
                   '"${user.bio}"',
-                  style: TextStyle(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w400,
-                  ),
+                  style: Theme.of(context).textTheme.bodyMedium,
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 32.h),
@@ -95,11 +90,9 @@ class ProfileScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.w),
                       child: Text(
-                        'Their Active Clubs',
-                        style: TextStyle(
-                            color: const Color(0xFF191C20),
-                            fontSize: 17.sp,
-                            fontWeight: FontWeight.w600),
+                        AppStrings.theirActiveClubs,
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            fontSize: 17.sp, fontWeight: FontWeight.w600),
                       ),
                     ),
                     Expanded(
@@ -133,9 +126,7 @@ class BadgeWidget extends StatelessWidget {
           context: context,
           builder: (BuildContext context) {
             return Theme(
-              data: ThemeData(
-                dialogBackgroundColor: Colors.white
-              ),
+              data: ThemeData(dialogBackgroundColor: Colors.white),
               child: AlertDialog(
                 titlePadding: const EdgeInsets.all(0),
                 contentPadding: const EdgeInsets.all(16),
@@ -154,9 +145,9 @@ class BadgeWidget extends StatelessWidget {
           Text(
             badge.title,
             style: TextStyle(
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w700,
-            ),
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w700,
+                color: Styles.textPrimary),
           )
         ],
       ),

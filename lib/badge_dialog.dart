@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:misfit_assigment/activity_card.dart';
 import 'package:misfit_assigment/enums.dart';
+import 'package:misfit_assigment/strings.dart';
 
 class BadgeDialog extends StatelessWidget {
   const BadgeDialog({super.key, required this.badge});
@@ -32,10 +33,10 @@ class BadgeDialog extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Text(
                     badge.title,
-                    style: TextStyle(
-                        color: const Color(0xFF191C20),
-                        fontSize: 28.sp,
-                        fontWeight: FontWeight.w500),
+                    style: Theme.of(context)
+                        .textTheme
+                        .headlineLarge
+                        ?.copyWith(fontSize: 28.sp),
                   ),
                 ),
                 Expanded(
@@ -46,10 +47,7 @@ class BadgeDialog extends StatelessWidget {
             SizedBox(height: 16.h),
             Text(
               badge.description,
-              style: TextStyle(
-                  color: const Color(0xFF191C20),
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w400),
+              style: Theme.of(context).textTheme.bodyMedium,
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 32.h),
@@ -59,15 +57,12 @@ class BadgeDialog extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF1E7ACC),
-                minimumSize:  Size.fromHeight(60.h),
+                minimumSize: Size.fromHeight(60.h),
                 textStyle: TextStyle(fontSize: 14.sp),
               ),
               child: Text(
-                'Cool!',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600),
+                '${AppStrings.cool}!',
+                style: Theme.of(context).textTheme.labelSmall,
               ),
             ),
             SizedBox(height: 16.h),

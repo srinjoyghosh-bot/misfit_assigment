@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:misfit_assigment/profile_screen.dart';
 import 'package:misfit_assigment/sample.dart';
+import 'package:misfit_assigment/styles.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +22,12 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
+            textTheme: TextTheme(
+              headlineLarge: Styles.headerStyle,
+              bodyMedium: Styles.bodyStyle,
+              bodySmall: Styles.bodyStyle2,
+              labelSmall: Styles.buttonStyle
+            ),
           ),
           home: child,
         );
@@ -29,4 +36,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
